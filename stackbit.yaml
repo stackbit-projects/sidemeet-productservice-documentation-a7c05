@@ -1,0 +1,53 @@
+stackbitVersion: ~0.3.0
+ssgName: jekyll
+publishDir: _site
+dataDir: _data
+pagesDir: ''
+models:
+  doc:
+    type: page
+    label: Doc
+    folder: _docs
+    match: '**/*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: category
+        label: Category
+      - type: number
+        name: order
+        label: Order
+        subtype: int
+  page_1:
+    type: page
+    label: Page 1
+    match:
+      - _posts/2016-01-12-media-support.md
+      - _posts/2016-02-05-general-fixes-and-improvements.md
+      - _posts/_defaults.md
+      - index.md
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: type
+        label: Type
+  page_2:
+    type: page
+    label: Page 2
+    match: '*'
+    exclude:
+      - index.md
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: permalink
+        label: Permalink
+      - type: boolean
+        name: sitemap
+        label: Sitemap
